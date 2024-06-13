@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  font-family: "PoPins" !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +14,7 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+
   }
 }
 
@@ -25,6 +27,18 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+@font-face {
+  font-family: 'Genica-One';
+  src: url('/assets/fonts/DXXEYI-Genica-One.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('/assets/fonts/DVLWIQY-Poppins-Regular.ttf') format('truetype');
+}
+.wobble {
+  font-family: 'Genica-One' !important;
+}
+
 
 @layer utilities {
   .text-balance {
