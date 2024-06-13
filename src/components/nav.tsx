@@ -6,7 +6,7 @@ import * as React from "react";
 export interface NavbarProps {}
 
 export default function Navbar(props: NavbarProps) {
-  const links: string[] = ["Home", "About", "Blog", "Contact-Us"];
+  const links: string[] = ["About", "Services", "Contact-Us"];
   return (
     <nav className="bg-secondary fixed w-full z-20 top-0 start-0">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -14,14 +14,21 @@ export default function Navbar(props: NavbarProps) {
           src={"/assets/icon.png"}
           width={150}
           height={150}
-        //   className="h-16 "
+          //   className="h-16 "
           alt="Wobble Logo"
         />
 
         <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <button
-            type="button"
-            className="text-black text-4xl wobble bg-primary rounded-3xl focus:ring-4 focus:outline-none font-medium  px-4 py-2 text-center"
+            onClick={() => {
+              setTimeout(() => {
+                document
+                  .getElementById("Home")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }, 100);
+            }}
+           
+            className="text-black text-4xl wobble outline-none bg-primary rounded-3xl  font-medium  px-4 py-2 text-center"
           >
             Wobble
           </button>
@@ -58,7 +65,14 @@ export default function Navbar(props: NavbarProps) {
             {links.map((item, index) => (
               <li key={index}>
                 <Link
-                  href="#"
+                  onClick={() => {
+                    setTimeout(() => {
+                      document
+                        .getElementById(item)
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }, 100);
+                  }}
+                  href={``}
                   className="block py-2 px-3 text-white text-3xl"
                   aria-current="page"
                 >
